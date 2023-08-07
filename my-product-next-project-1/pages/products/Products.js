@@ -90,7 +90,7 @@ export default function Products({title,img,myKey,stock,price, myImages}) {
              <div style={{
                 textAlign: "start",
                 marginTop: 15
-             }}><Link href={``}><button className="seeDetailsBtn">See Details</button></Link></div>   
+             }}><Link href={`api/products/${myKey}`}><button className="seeDetailsBtn">See Details</button></Link></div>   
             </Card>
         </div>
     )
