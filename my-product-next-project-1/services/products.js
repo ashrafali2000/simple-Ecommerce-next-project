@@ -10,6 +10,17 @@ export function getAllProducs() {
 
 export function getSingleProducsById(id) {
    const {products} = getAllProducs();
-   const productDetails = products.find(item => item.id === id);
+  const  productDetails = products.find(item => item.id === id);
    return productDetails;
 }
+
+export function addProduct(title,description,price, discountPercentage, rating,stock,brand,category,images) {
+    const { products } = getAllProducs();
+    products.push({
+      id: products.length + 1,
+      title,price,description,discountPercentage,rating,stock,brand,category,images
+    });
+    fs.writeFileSync(filePath, JSON.stringify({ products }));
+  
+    return products;
+  }
