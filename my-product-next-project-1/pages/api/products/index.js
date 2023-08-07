@@ -1,4 +1,4 @@
-import { getAllProducs } from "@/services/products"
+import { getAllProducs, addProduct } from "@/services/products"
 
 export default function handler(req, res) {
     if(req.method === "GET") {

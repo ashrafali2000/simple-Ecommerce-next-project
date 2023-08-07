@@ -78,7 +78,7 @@ function NewProduct() {
         </div>
         <div className={classes.control}>
           <label htmlFor="images">images</label>
-          <input type="number" id="images" ref={imagesRef} />
+          <input type="text" id="images" ref={imagesRef} />
         </div>
       </div>
       <div className={classes.control}>
