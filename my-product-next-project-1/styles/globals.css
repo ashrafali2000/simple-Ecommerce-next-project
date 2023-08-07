@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.allProducts{
+    display: flex; 
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+
+}
+.seeDetailsBtn{
+    background-color: rgb(92, 92, 234);
+    color: #fff;
+    padding: 8px 17px ;
+     border-radius: 10px;
+}

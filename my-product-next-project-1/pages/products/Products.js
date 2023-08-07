@@ -1,4 +1,4 @@
-import { Card } from "antd";
+import { Button, Card } from "antd";
 import Link from "next/link";
 import {BiLike} from "react-icons/bi"
 import {AiOutlineHeart} from "react-icons/ai"
@@ -12,6 +12,7 @@ export default function Products({title,img,myKey,stock,price, myImages}) {
     const likeHandler = () => {
         setLike(prev => prev + 1);
     }
+
     const loveHandler = () => {
         setLove(prev => prev + 1);
     }
@@ -77,6 +78,7 @@ export default function Products({title,img,myKey,stock,price, myImages}) {
             }}> {love} <AiOutlineHeart style={{fontSize: 30}}  onClick={loveHandler}/></div>
                 </div>
                 </div>
+                <button className="seeDetailsBtn">See Details</button>
             </Card>
         </div>
     )

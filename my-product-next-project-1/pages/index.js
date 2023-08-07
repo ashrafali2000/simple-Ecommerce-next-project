@@ -8,7 +8,7 @@ export default function Home() {
       .then((p) => setProducts(p.products));
   }, []);
   return (
-   <div>
+   <div className="allProducts">
      {products.map(product => <Products key={product.id} img = {product.images[0]} titel = {product.title} stock = {product.stock} price={product.price} /> )}
    </div>
   )
