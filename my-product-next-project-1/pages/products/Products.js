@@ -3,6 +3,7 @@ import Link from "next/link";
 import {BiLike} from "react-icons/bi"
 import {AiOutlineHeart} from "react-icons/ai"
 import { useState } from "react";
+import {FaRegCommentDots} from "react-icons/fa"
 
 export default function Products({title,img,myKey,stock,price, myImages}) {
 
@@ -23,13 +24,14 @@ export default function Products({title,img,myKey,stock,price, myImages}) {
             <Card
              style={{
                 width: 330,
-                height: 450,
+                height: 480,
                 backgroundColor: "#e3c986",
                 color: "#000",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
                 alignItems: "center",
+                boxShadow: "0px 4px 13px #777"
               }}
               cover={
               <Link href={`productDetails/${myKey}`}> <img style={{
@@ -54,10 +56,9 @@ export default function Products({title,img,myKey,stock,price, myImages}) {
                 {title}
                 <div style={{
                     fontSize: 30,
-                    width: 190,
+                    width: 230,
                     display: "flex",
                     justifyContent: "space-between",
-                    // alignItems:"center"
 
                 }}>
               <div 
@@ -76,9 +77,20 @@ export default function Products({title,img,myKey,stock,price, myImages}) {
                 justifyContent: "space-between",
                 alignItems:"center"
             }}> {love} <AiOutlineHeart style={{fontSize: 30}}  onClick={loveHandler}/></div>
+            <div style={{
+                fontSize:30,
+
+            }}
+            >
+           <FaRegCommentDots></FaRegCommentDots>
+            </div>
                 </div>
                 </div>
-                <button className="seeDetailsBtn">See Details</button>
+
+             <div style={{
+                textAlign: "center",
+                marginTop: 10
+             }}><Link href={``}><button className="seeDetailsBtn">See Details</button></Link></div>   
             </Card>
         </div>
     )

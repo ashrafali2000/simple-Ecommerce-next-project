@@ -9,7 +9,7 @@ export default function Home() {
   }, []);
   return (
    <div className="allProducts">
-     {products.map(product => <Products key={product.id} img = {product.images[0]} titel = {product.title} stock = {product.stock} price={product.price} /> )}
+     {products.map(product => <Products key={product.id} img = {product.images[0]} title = {product.title} stock = {product.stock} price={product.price} /> )}
    </div>
   )
 }
