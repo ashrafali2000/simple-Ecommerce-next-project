@@ -4,6 +4,9 @@ import { Button } from "antd";
 
 function NewProduct() {
   const [isInvalid, setIsInvalid] = useState(false);
+//   const [myimg, setImg] = useState([]);
+
+
 
   const titleRef = useRef();
   const priceRef = useRef();
@@ -27,7 +30,11 @@ function NewProduct() {
     const brand = brandRef.current.value;
     const category = categoryRef.current.value;
     const images = imagesRef.current.value;
-
+      
+    // const myFunc = function() {
+    //     setImg(prev => [...prev] )
+    // }
+    
     if (!title || title.trim() === "" || !price || price.trim() === "") {
       setIsInvalid(true);
       return;
