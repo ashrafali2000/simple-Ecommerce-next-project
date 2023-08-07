@@ -4,6 +4,7 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import mylogo from "../public/LogoProducts.png";
 import Image from 'next/image';
+import Link from 'next/link';
 
 const navigation = [
   { name: 'Home', href: '/', current: true },
@@ -127,8 +128,13 @@ export default function App({ Component, pageProps }) {
                   <span className="sr-only">View notifications</span>
                   <BellIcon className="h-6 w-6" aria-hidden="true" />
                 </button> */}
- 
- 
+           <Link style={{
+            color: "#fff"
+           }} href="/signIn">Sing in</Link>
+         <Link style={{
+            color: "#fff"
+           }} href="/signUp">Create Account</Link>
+
                 {/* Profile dropdown */}
                 <Menu as="div" className="relative ml-3">
                   <div>
