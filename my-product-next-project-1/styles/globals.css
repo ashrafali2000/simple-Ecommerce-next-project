@@ -16,3 +16,9 @@
     padding: 8px 17px ;
      border-radius: 10px;
 }
+.cardImg{
+    opacity: 0.6;
+}
+.cardImg:hover{
+    opacity: 1;
+}

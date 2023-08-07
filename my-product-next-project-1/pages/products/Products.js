@@ -23,7 +23,7 @@ export default function Products({title,img,myKey,stock,price, myImages}) {
         <div className="Products">
             <Card
              style={{
-                width: 330,
+                width: 320,
                 height: 480,
                 backgroundColor: "#e3c986",
                 color: "#000",
@@ -34,13 +34,13 @@ export default function Products({title,img,myKey,stock,price, myImages}) {
                 boxShadow: "0px 4px 13px #777"
               }}
               cover={
-              <Link href={`productDetails/${myKey}`}> <img style={{
+            <img className="cardImg" style={{
                     height: 260,
                     width: 250,
                 }}
                   alt="example"
                   src={`${img}`}
-                /></Link>
+                />
             }
             >
                 <div
@@ -88,8 +88,8 @@ export default function Products({title,img,myKey,stock,price, myImages}) {
                 </div>
 
              <div style={{
-                textAlign: "center",
-                marginTop: 10
+                textAlign: "start",
+                marginTop: 15
              }}><Link href={``}><button className="seeDetailsBtn">See Details</button></Link></div>   
             </Card>
         </div>
