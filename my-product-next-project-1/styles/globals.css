@@ -22,3 +22,9 @@
 .cardImg:hover{
     opacity: 1;
 }
+.sticky-top{
+    /* position: relative; */
+    position: sticky;
+    z-index: 999;
+    top: 0px;
+}
