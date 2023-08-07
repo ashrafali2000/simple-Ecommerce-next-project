@@ -128,12 +128,8 @@ export default function App({ Component, pageProps }) {
                   <span className="sr-only">View notifications</span>
                   <BellIcon className="h-6 w-6" aria-hidden="true" />
                 </button> */}
-           <Link style={{
-            color: "#fff"
-           }} href="/signIn">Sing in</Link>
-         <Link style={{
-            color: "#fff"
-           }} href="/signUp">Create Account</Link>
+           <Link className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium' href="/signIn">Sing in</Link>
+         <Link className='text-gray-300  hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium' href="/signUp ">Create Account</Link>
 
                 {/* Profile dropdown */}
                 <Menu as="div" className="relative ml-3">
@@ -143,7 +139,7 @@ export default function App({ Component, pageProps }) {
                       <span className="sr-only">Open user menu</span>
                       <img
                         className="h-8 w-8 rounded-full"
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIo_dFaAb7Hg0zAjUCzoiphbZjDiZzXm8RzA&usqp=CAU"
                         alt=""
                       />
                     </Menu.Button>
