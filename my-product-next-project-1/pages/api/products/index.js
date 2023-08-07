@@ -1,3 +1,8 @@
+import { getAllProducs } from "@/services/products"
+
 export default function handler(req, res) {
-    res.status(200).json({ name: 'John Doe' })
+    if(req.method === "GET") {
+        const product = getAllProducs();
+        res.status(200).json(product);
+    }
   }
