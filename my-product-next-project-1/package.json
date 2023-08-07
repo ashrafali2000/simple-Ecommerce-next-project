@@ -14,6 +14,7 @@
     "@iconify/icons-heroicons-solid": "^1.2.6",
     "@react-icons/all-files": "^4.1.0",
     "@tailwindcss/aspect-ratio": "^0.4.2",
+    "antd": "^5.8.2",
     "heroicons-react": "^1.4.1",
     "next": "13.4.12",
     "react": "18.2.0",
