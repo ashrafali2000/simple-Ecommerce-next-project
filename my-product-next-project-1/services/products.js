@@ -24,3 +24,11 @@ export function addProduct(title,description,price, discountPercentage, rating,s
   
     return products;
   }
+
+
+  export function getCommentById(id) {
+   const {products} = getAllProducs();
+  const  productDetails = products.find(item => item.id === id);
+  console.log(productDetails);
+   return productDetails;
+}

@@ -10,5 +10,8 @@ export default function handler(req, res) {
         const updatedProducts = addProduct(title,description,price, discountPercentage, rating,stock,brand,category,images);
         return res.status(201).json(updatedProducts);
       }
+    //   if(req.method === "PUT"){
+    //    const product = getCommentById()
+    //   }
       return res.status(404).json({message:"NOT FOND"});
   }

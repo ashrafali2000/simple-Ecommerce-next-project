@@ -4,8 +4,14 @@ import {BiLike} from "react-icons/bi"
 import {AiOutlineHeart} from "react-icons/ai"
 import { useState } from "react";
 import {FaRegCommentDots} from "react-icons/fa"
-
+// import { getCommentById } from "@/services/products";
+function handleInput(event) {
+    let value = event.target.value;
+    setFocusText(value);
+ }
 export default function Products({title,img,myKey,stock,price, myImages}) {
+
+    const [hideLightbox, setHideLightbox] = useState(true);
 
     const [like, setLike] = useState(stock);
     const [love, setLove] = useState(price);
@@ -82,10 +88,8 @@ export default function Products({title,img,myKey,stock,price, myImages}) {
 
             }}
             >
-                <input className="CommentInput" style={{
-                    display:"none"
-                }}></input>
-           <FaRegCommentDots onClick={input.display = "block"}></FaRegCommentDots>
+               <form className={`lightbox ${hideLightbox ? "hide-lightbox" : ""}`}><input autoFocus></input> <button className="savebtn">Send</button> </form> 
+           <FaRegCommentDots onClick={() => setHideLightbox(false) }></FaRegCommentDots>
             </div>
                 </div>
                 </div>

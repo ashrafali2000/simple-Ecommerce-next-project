@@ -23,8 +23,43 @@
     opacity: 1;
 }
 .sticky-top{
-    /* position: relative; */
     position: sticky;
     z-index: 999;
     top: 0px;
 }
+
+
+
+
+.lightbox {
+    position: absolute;
+    display: block;
+    top: 10;
+    bottom: 80;
+    left: 5;
+    right: 0;
+    background: rgb(255, 255, 255);
+    transition: 0.3s all;
+    color: #000000;
+    pointer-events: auto;
+   padding: 10px;
+   display: flex;
+   justify-content: space-between;
+   flex-direction: column;
+   align-items: center;
+   gap: 10px;
+  }
+  
+  .hide-lightbox {
+    /* opacity: 0; */
+    /* pointer-events: fill; */
+    z-index: -1;
+  }
+  .savebtn{
+    background-color: rgb(101, 101, 242);
+    color: #fff;
+    font-size: 20px;
+    /* height: 4px; */
+    /* width: 4px; */
+    padding: 4px 10px;
+  }
