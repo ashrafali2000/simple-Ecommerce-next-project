@@ -26,9 +26,27 @@ export function addProduct(title,description,price, discountPercentage, rating,s
   }
 
 
-  export function getCommentById(id) {
+//   export function getCommentById(id) {
+//    const {products} = getAllProducs();
+//   const  productDetails = products.find(item => item.id === id);
+//    return productDetails;
+// }
+
+  export function getCommentById(id,comment) {
    const {products} = getAllProducs();
-  const  productDetails = products.find(item => item.id === id);
-  console.log(productDetails);
-   return productDetails;
+  const  productDetails = products.find(item => item.id === Number(id));
+    productDetails.comment = comment;
+    console.log(productDetails)
+    products.push(productDetails);
+
+// important
+const uniqueProduct = products.filter(
+   (obj, index) =>
+   products.findIndex((item) => item.id === obj.id) === index
+ );
+
+
+
+  fs.writeFileSync(filePath, JSON.stringify({uniqueProduct}));
+   return uniqueProduct;
 }
