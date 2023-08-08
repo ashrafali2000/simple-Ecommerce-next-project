@@ -40,15 +40,15 @@ function NewProduct() {
       return;
     }
     const newProduct = JSON.stringify({title,description,price, discountPercentage, rating,stock,brand,category,images });
-    fetch("/api/products/", {
-      method: "POST",
-      body: newProduct,
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .then((json) => console.log(json));
+    // fetch("/api/products/", {
+    //   method: "POST",
+    //   body: newProduct,
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    // })
+    //   .then((res) => res.json())
+    //   .then((json) => console.log(json));
   }
 
 
