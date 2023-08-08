@@ -82,7 +82,10 @@ export default function Products({title,img,myKey,stock,price, myImages}) {
 
             }}
             >
-           <FaRegCommentDots></FaRegCommentDots>
+                <input className="CommentInput" style={{
+                    display:"none"
+                }}></input>
+           <FaRegCommentDots onClick={input.display = "block"}></FaRegCommentDots>
             </div>
                 </div>
                 </div>
