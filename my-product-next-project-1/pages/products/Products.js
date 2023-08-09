@@ -113,7 +113,7 @@ export default function Products({ title, img, myKey, stock, price, myImages }) 
                 <div style={{
                     textAlign: "start",
                     marginTop: 15
-                }}><Link href={`productDetails/${myKey}`}><button className="seeDetailsBtn">See Details</button></Link></div>
+                }}><Link href={`ProductsDetail/${myKey}`}><button className="seeDetailsBtn">See Details</button></Link></div>
             </Card>
         </div>
     )
