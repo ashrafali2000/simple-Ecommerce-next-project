@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 
 const filePath = path.join(process.cwd(), "database","products.json" );
+const filePathForSingleProduct = path.join(process.cwd(), "database", "singleProduct.json");
 
 export function getAllProducs() {
    const data = fs.readFileSync(filePath);
@@ -32,21 +33,31 @@ export function addProduct(title,description,price, discountPercentage, rating,s
 //    return productDetails;
 // }
 
+// Comment by id
+
   export function getCommentById(id,comment) {
-   const {products} = getAllProducs();
+   let {products} = getAllProducs();
   const  productDetails = products.find(item => item.id === Number(id));
     productDetails.comment = comment;
     console.log(productDetails)
     products.push(productDetails);
 
 // important
-const uniqueProduct = products.filter(
+ products = products.filter(
    (obj, index) =>
    products.findIndex((item) => item.id === obj.id) === index
  );
 
+  fs.writeFileSync(filePath, JSON.stringify({products}));
+   return products;
+}
 
 
-  fs.writeFileSync(filePath, JSON.stringify({uniqueProduct}));
-   return uniqueProduct;
+// every product Details
+export function getCommentBySingleId(id) {
+  let {products} = getAllProducs();
+ const  productDetails = products.find(item => item.id === Number(id));
+// important
+ fs.writeFileSync(filePathForSingleProduct, JSON.stringify({productDetails}));
+  return productDetails;
 }
