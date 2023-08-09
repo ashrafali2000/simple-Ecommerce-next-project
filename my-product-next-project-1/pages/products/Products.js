@@ -33,11 +33,11 @@ export default function Products({ title, img, myKey, stock, price, myImages }) 
     const [love, setLove] = useState(price);
 
     const likeHandler = () => {
-        setLike(prev => prev + 1);
+        setLike(prev => +prev + 1);
     }
 
     const loveHandler = () => {
-        setLove(prev => prev + 1);
+        setLove(prev => +prev + 1);
     }
 
 
