@@ -29,8 +29,11 @@ function NewProduct() {
     const stock = stockRef.current.value;
     const brand = brandRef.current.value;
     const category = categoryRef.current.value;
-    const images = imagesRef.current.value;
-      
+    const imagess = imagesRef.current.value;
+
+   let images = [imagess];
+    // arr.push = images;
+    //   console.log(arr);
     // const myFunc = function() {
     //     setImg(prev => [...prev] )
     // }
@@ -40,15 +43,15 @@ function NewProduct() {
       return;
     }
     const newProduct = JSON.stringify({title,description,price, discountPercentage, rating,stock,brand,category,images });
-    // fetch("/api/products/", {
-    //   method: "POST",
-    //   body: newProduct,
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    // })
-    //   .then((res) => res.json())
-    //   .then((json) => console.log(json));
+    fetch("/api/products/", {
+      method: "POST",
+      body: newProduct,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((json) => console.log(json));
   }
 
 
