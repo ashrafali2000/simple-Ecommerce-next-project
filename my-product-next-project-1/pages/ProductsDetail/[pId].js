@@ -267,13 +267,13 @@ export default function ProductDetails(props) {
             </form>
           </div>
 
-          <div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6">
+          <div className="py-10 px-10  lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6 bg-gray-300">
             {/* Description and details */}
             <div>
               <h3 className="sr-only">Description</h3>
 
               <div className="space-y-6">
-                <p className="text-base text-gray-900">{myData.description}</p>
+                <p className="text-base text-gray-900">{myData.description +" 1"}</p>
               </div>
             </div>
 
@@ -307,9 +307,14 @@ export default function ProductDetails(props) {
             </div>
             <div className="mt-10">
               <h2 className="text-lg font-medium text-gray-900">Comments:</h2>
-              <ul role="list" className="list-disc space-y-2 pl-2 text-sm">
-                <span className="text-sm text-gray-600">{myData.comment}</span>
-                </ul>
+              <ol role="list" className="list-disc space-y-2 pl-2 text-sm">
+                <li style={{
+                  backgroundColor: "#fff",
+                  width: 300,
+                  padding:" 5px 10px",
+                  boxShadow: "2px 3px 9px #888"
+                }} className="text-sm text-gray-600">{myData.comment}</li>
+                </ol>
             </div>
           </div>
         </div>
