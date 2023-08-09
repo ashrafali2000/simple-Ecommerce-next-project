@@ -32,11 +32,6 @@ function NewProduct() {
     const imagess = imagesRef.current.value;
 
    let images = [imagess];
-    // arr.push = images;
-    //   console.log(arr);
-    // const myFunc = function() {
-    //     setImg(prev => [...prev] )
-    // }
     
     if (!title || title.trim() === "" || !price || price.trim() === "") {
       setIsInvalid(true);

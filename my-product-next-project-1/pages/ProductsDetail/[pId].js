@@ -95,8 +95,8 @@ export default function ProductDetails(props) {
         <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
           <div className="aspect-h-4 aspect-w-3 hidden overflow-hidden rounded-lg lg:block">
             <img
-              src={myData.images[0]}
-              alt={myData.images[0]}
+              src={myData.images[2]}
+              alt={myData.images[2]}
               className="h-full w-full object-cover object-center"
             />
           </div>
@@ -110,16 +110,16 @@ export default function ProductDetails(props) {
             </div>
             <div className="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg">
               <img
-                src={myData.images[2]}
-                alt={myData.images[2]}
+                src={myData.images[3]}
+                alt={myData.images[3]}
                 className="h-full w-full object-cover object-center"
               />
             </div>
           </div>
           <div className="aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3 sm:overflow-hidden sm:rounded-lg">
             <img
-              src={myData.images[3]}
-              alt={myData.images[3]}
+              src={myData.images[0]}
+              alt={myData.images[0]}
               className="h-full w-full object-cover object-center"
             />
           </div>
