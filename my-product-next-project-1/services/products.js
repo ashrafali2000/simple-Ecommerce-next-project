@@ -33,8 +33,8 @@ export function addProduct(title,description,price, discountPercentage, rating,s
 //    return productDetails;
 // }
 
-// Comment by id
 
+// Comment by id
   export function getCommentById(id,comment) {
    let {products} = getAllProducs();
   const  productDetails = products.find(item => item.id === Number(id));
@@ -42,15 +42,16 @@ export function addProduct(title,description,price, discountPercentage, rating,s
     console.log(productDetails)
     products.push(productDetails);
 
+
 // important
  products = products.filter(
    (obj, index) =>
    products.findIndex((item) => item.id === obj.id) === index
  );
-
   fs.writeFileSync(filePath, JSON.stringify({products}));
    return products;
 }
+
 
 
 // every product Details
