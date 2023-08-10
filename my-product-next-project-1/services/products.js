@@ -43,8 +43,6 @@ export function addProduct(title,description,price, discountPercentage, rating,s
     console.log(productDetails)
     products.push(productDetails);
 
-
-// important
  products = products.filter(
    (obj, index) =>
    products.findIndex((item) => item.id === obj.id) === index
@@ -59,34 +57,37 @@ export function addProduct(title,description,price, discountPercentage, rating,s
 export function getCommentBySingleId(id) {
   let {products} = getAllProducs();
  const  productDetails = products.find(item => item.id === Number(id));
-// important
+
  fs.writeFileSync(filePathForSingleProduct, JSON.stringify({productDetails}));
   return productDetails;
 }
 
 
-// sign Up
+// getAllAccounts
 export function getAllAccounts() {
   const data = fs.readFileSync(filePathForSignUP);
   return JSON.parse(data);
 }
 
-
-
-export function signUp(name,email,password) {
-const {userId} = getAllAccounts();
-
-// yeha sy 
-// userId.filter(user.name !== name);
-// if(userId.name === name) {
-//   return ("This user Already exist");
+// signUp accont
+// export function signUp(name,email,password) {
+//  const {userId} = getAllAccounts();
+//   let val = false;
+//   for(let a = 0; a < userId.length; a++) {
+//     if(userId.length !== 0 && userId[a].email === email){
+//     console.log(userId)
+//     val = true;
+//     break;
+//   }
+// }
+// if(val){
+//     fs.writeFileSync(filePathForSignUP, JSON.stringify({ userId }));
+//       return userId;
+//   }
+// else{
+//   userId.push({name,email,password});
+//     fs.writeFileSync(filePathForSignUP, JSON.stringify({ userId }));
+//     return userId;
+//   }
 // }
 
-
-userId.push({
-  // id: userId.length + 1,
-name,email,password
-});
-fs.writeFileSync(filePathForSignUP, JSON.stringify({ userId }));
-return userId;
-}
