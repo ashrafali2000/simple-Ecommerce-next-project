@@ -1,5 +1,13 @@
-
+import { useRef, useState } from "react"
 export default function SingnIn() {
+  const emailRef = useRef();
+  const passwordRef = useRef();
+
+  const checkHandler = () => {
+    const [check, setCheck] = useState(false);
+    const email = emailRef.current.value;
+    const password = passwordRef.current.value;
+  }
   return (
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -15,7 +23,7 @@ export default function SingnIn() {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form className="space-y-6" action="#" method="POST">
+          <form className="space-y-6" action="#" onSubmit={checkHandler}>
             <div>
               <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
                 Email address
@@ -23,6 +31,7 @@ export default function SingnIn() {
               <div className="mt-2">
                 <input
                   id="email"
+                  ref={emailRef}
                   name="email"
                   type="email"
                   autoComplete="email"
@@ -46,6 +55,7 @@ export default function SingnIn() {
               <div className="mt-2">
                 <input
                   id="password"
+                  ref={passwordRef}
                   name="password"
                   type="password"
                   autoComplete="current-password"
