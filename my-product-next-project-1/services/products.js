@@ -70,24 +70,24 @@ export function getAllAccounts() {
 }
 
 // signUp accont
-// export function signUp(name,email,password) {
-//  const {userId} = getAllAccounts();
-//   let val = false;
-//   for(let a = 0; a < userId.length; a++) {
-//     if(userId.length !== 0 && userId[a].email === email){
-//     console.log(userId)
-//     val = true;
-//     break;
-//   }
-// }
-// if(val){
-//     fs.writeFileSync(filePathForSignUP, JSON.stringify({ userId }));
-//       return userId;
-//   }
-// else{
-//   userId.push({name,email,password});
-//     fs.writeFileSync(filePathForSignUP, JSON.stringify({ userId }));
-//     return userId;
-//   }
-// }
+export function signUp(name,email,password) {
+ const {userId} = getAllAccounts();
+  let val = false;
+  for(let a = 0; a < userId.length; a++) {
+    if(userId.length !== 0 && userId[a].email === email){
+    console.log(userId)
+    val = true;
+    break;
+  }
+}
+if(val){
+    fs.writeFileSync(filePathForSignUP, JSON.stringify({ userId }));
+      return userId;
+  }
+else{
+  userId.push({name,email,password});
+    fs.writeFileSync(filePathForSignUP, JSON.stringify({ userId }));
+    return userId;
+  }
+}
 
