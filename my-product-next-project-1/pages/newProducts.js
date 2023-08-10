@@ -4,9 +4,6 @@ import { Button } from "antd";
 
 function NewProduct() {
   const [isInvalid, setIsInvalid] = useState(false);
-//   const [myimg, setImg] = useState([]);
-
-
 
   const titleRef = useRef();
   const priceRef = useRef();
@@ -48,7 +45,6 @@ function NewProduct() {
       .then((res) => res.json())
       .then((json) => console.log(json));
   }
-
 
   return (
     <form className={classes.form} onSubmit={addProductHandler}>
