@@ -93,7 +93,7 @@ export default function SingnIn() {
             </div>
 
             <div>
-            {check ? <p style={{color: "#10781a"}}>Login Successfully</p> : <p style={{color: "#f00"}}>Please enter a valid email and password</p>}
+            {check ? <p style={{color: "#10781a", fontWeight: 500}}>Login Successfully</p> : <p style={{color: "#f00"}}>Please enter a valid email and password</p>}
               <button
                 type="submit"
                 className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
