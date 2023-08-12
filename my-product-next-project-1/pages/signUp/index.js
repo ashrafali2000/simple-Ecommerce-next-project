@@ -1,8 +1,11 @@
-import { useRef } from "react"
+import { useRef,useState } from "react"
+
 export default function SignUp() {
   const nameRef =  useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
+  const [check, setCheck] = useState(true);
+  const [check1, setCheck1] = useState(false);
 
  const submitHandler = (event) => {
   event.preventDefault();
@@ -24,7 +27,28 @@ fetch("/api/signup/", {
 .then((res) => res.json())
 .then((json) => console.log(json));
 
+// Get Data
 
+fetch('http://localhost:3000/api/signup')
+.then(res => res.json())
+.then(json => {
+const users =   json.userId;
+let val = false;
+for(let a = 0; a < users.length; a++) {
+  if( users[a].email === email && users.length >= 0){
+  val = true;
+  break;
+}
+}
+if(val){
+setCheck(false);
+setCheck1(true);
+}
+else{
+setCheck(false);
+}
+
+})
 
 }
 
@@ -102,11 +126,12 @@ fetch("/api/signup/", {
               </div>
   
               <div>
+              {check  ?  <p>Complete the above blanks</p> : check1 ? <p style={{color: "#f00"}}>This Account already exist</p> : <p style={{color: "#0f0"}}>Account created successfully</p>}
                 <button
                   type="submit"
                   className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
-                  Sign in
+                  Create Account
                 </button>
               </div>
             </form>
