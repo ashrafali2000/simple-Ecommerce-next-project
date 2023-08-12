@@ -1,13 +1,40 @@
 import { useRef, useState } from "react"
+
 export default function SingnIn() {
+
+  const [check, setCheck] = useState(false);
   const emailRef = useRef();
   const passwordRef = useRef();
 
-  const checkHandler = () => {
-    const [check, setCheck] = useState(false);
+  const checkHandler = (event) => {
+    event.preventDefault();
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
+    console.log(email,password)
+
+    fetch('http://localhost:3000/api/signin')
+    .then(res => res.json())
+    .then(json => {
+   const users =   json.userId;
+    let val = false;
+    for(let a = 0; a < users.length; a++) {
+      if( users[a].email === email && users[a].password === password){
+      val = true;
+      break;
+    }
   }
+  if(val){
+    setCheck(true);
+    }
+  else{
+    setCheck(false);
+    }
+
+    })
+  }
+
+
+
   return (
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -23,7 +50,7 @@ export default function SingnIn() {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form className="space-y-6" action="#" onSubmit={checkHandler}>
+          <form className="space-y-6"  onSubmit={checkHandler}>
             <div>
               <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
                 Email address
@@ -66,6 +93,7 @@ export default function SingnIn() {
             </div>
 
             <div>
+            {check ? <p>login successfuly</p> : <p>Please enter a valid email and password</p>}
               <button
                 type="submit"
                 className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
