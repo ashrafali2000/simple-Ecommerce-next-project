@@ -12,6 +12,7 @@ const password = passwordRef.current.value;
 console.log(name,email,password)
 
 const newProduct = JSON.stringify({name,email, password });
+
 // POST method
 fetch("/api/signup/", {
   method: "POST",
@@ -23,16 +24,7 @@ fetch("/api/signup/", {
 .then((res) => res.json())
 .then((json) => console.log(json));
 
-// GET method
-// fetch("/api/signup/", {
-//   method: "GET",
-//   body: newProduct,
-//   headers: {
-//     "Content-Type": "application/json",
-//   },
-// })
-// .then((res) => res.json())
-// .then((json) => console.log(json));
+
 
 }
 
