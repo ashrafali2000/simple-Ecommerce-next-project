@@ -5,7 +5,9 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import mylogo from "../public/LogoProducts.png";
 import Image from 'next/image';
 import Link from 'next/link';
-
+import linkedin from "../public/linkedin.png"
+import twitter from "../public/twitter.png"
+import github from "../public/github.png"
 const navigation = [
   { name: 'Home', href: '/', current: false },
   { name: 'About', href: '/about', current: false },
@@ -218,6 +220,119 @@ export default function App({ Component, pageProps }) {
 
 {/* pages */}
    <Component {...pageProps} />
+
+   {/* footer */}
+  <div style={{
+    backgroundColor:"#000",
+    color:"#999",
+    justifyContent:"center",
+    paddingTop:25,
+
+  }} >
+    <div  style={{
+    display: 'flex',
+    justifyContent:"space-evenly",
+    flexWrap: "wrap"
+  }}>
+   <div style={{width:300}}>
+    <Image src={mylogo} width={140} height={50} alt='logo' style={{
+        filter:" brightness(0) invert(1)"
+    }}></Image>
+    <p >The conccept of product is not selling and purchase but the main word is Quality.
+    </p>
+   </div>
+
+   <div style={{
+    display: 'flex',
+    gap:50,
+    flexWrap: 'wrap',
+    alignItems:"center"
+  }}>
+   <div style={{
+    display: 'flex',
+    flexDirection:"column",
+    justifyContent: "center",
+    alignItems:"center"
+  }}>
+    <h2 className='heading'>Company</h2>
+  <div><Link href={"#"} className='footer-links'>About</Link></div>
+  <div><Link href={"#"} className='footer-links'>Contact</Link></div>
+  <div><Link href={"#"} className='footer-links'>information</Link></div>
+  <div><Link href={"#"} className='footer-links'>Products</Link></div>
+  <div><Link href={"#"} className='footer-links'>Products</Link></div>
+  <div><Link href={"#"} className='footer-links'>Products</Link></div>
+    
+   </div>
+   <div style={{
+    display: 'flex',
+    flexDirection:"column",
+    justifyContent: "center",
+    alignItems:"center"
+  }}>
+<h1 className='heading'>Help</h1>
+  <div><Link href={"#"} className='footer-links'>About</Link></div>
+  <div><Link href={"#"} className='footer-links'>Contact</Link></div>
+  <div><Link href={"#"} className='footer-links'>information</Link></div>
+  <div><Link href={"#"} className='footer-links'>information</Link></div>
+  <div><Link href={"#"} className='footer-links'>information</Link></div>
+  <div><Link href={"#"} className='footer-links'>Products</Link></div>
+   </div>
+   <div style={{
+    display: 'flex',
+    flexDirection:"column",
+    justifyContent: "center",
+    alignItems:"center"
+  }} >
+   <h1 className='heading'>Products</h1>
+  <div><Link href={"#"} className='footer-links'>About</Link></div>
+  <div><Link href={"#"} className='footer-links'>Contact</Link></div>
+  <div><Link href={"#"} className='footer-links'>information</Link></div>
+  <div><Link href={"#"} className='footer-links'>Products</Link></div>
+  <div><Link href={"#"} className='footer-links'>Products</Link></div>
+  <div><Link href={"#"} className='footer-links'>Products</Link></div>
+  </div>
+
+   </div>
+
+
+    </div>
+
+<div style={{
+ display:"flex",
+ justifyContent: "center",
+ marginTop:30,
+ paddingBottom:20
+}}>
+    <div style={{
+      display: 'flex',
+      justifyContent:"space-evenly",
+      alignItems:"center",
+      width:200
+    }} >
+ <Link href="https://www.linkedin.com/in/ashraf-ali-21179a269"> <Image src={linkedin} alt='myimg' width={24} height={24} style={{
+     filter:" brightness(0) invert(1)"
+  }}></Image></Link>
+ <Link href="https://github.com/Ashraf-ali-2000"> <Image src={github} alt='myimg' width={24} height={24} style={{
+     filter:" brightness(0) invert(1)"
+  }}></Image></Link>
+  <Link href="https://twitter.com/Ashraf_khan_tw1"><Image src={twitter} alt='myimg' width={34} height={34} style={{
+     filter:" brightness(0) invert(1)"
+  }}></Image></Link>
+</div>
+
+    </div>
+<hr></hr>
+   <div style={{
+    display: "flex",
+    justifyContent:"center",
+    alignItems: "center",
+    padding:10
+   }}><p>@ASHRA  2023 All rights reserverd </p></div> 
+
+  </div>
+
+
+
 
   </div>
 }
