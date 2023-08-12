@@ -8,7 +8,20 @@
     gap: 30px;
     justify-content: center;
     align-items: center;
+    padding-top: 60px;
+    padding-bottom: 70px;
+    background-color: antiquewhite;
 
+}
+.allProducts-Container{
+    text-align: center;
+    background-color: antiquewhite;
+    padding-top: 40px ;
+
+}
+
+.bg-white{
+    background-color: antiquewhite;
 }
 .seeDetailsBtn{
     background-color: rgb(92, 92, 234);
@@ -51,15 +64,20 @@
   }
   
   .hide-lightbox {
-    /* opacity: 0; */
-    /* pointer-events: fill; */
     z-index: -1;
   }
   .savebtn{
     background-color: rgb(101, 101, 242);
     color: #fff;
     font-size: 20px;
-    /* height: 4px; */
-    /* width: 4px; */
     padding: 4px 10px;
+  }
+
+  .heading{
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+  }
+  .footer-links:hover{
+    color: #fff;
   }

@@ -8,8 +8,8 @@ const product = {
     price: '$192',
     href: '#',
     breadcrumbs: [
-      { id: 1, name: 'Men', href: '#' },
-      { id: 2, name: 'Clothing', href: '#' },
+      { id: 1, name: 'One', href: '#' },
+      { id: 2, name: 'two', href: '#' },
     ],
 
     colors: [

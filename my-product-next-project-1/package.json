@@ -11,6 +11,7 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@fortawesome/fontawesome-free": "^6.4.2",
     "@headlessui/react": "^1.7.16",
     "@heroicons/react": "^2.0.18",
     "@iconify/icons-heroicons-solid": "^1.2.6",
@@ -19,9 +20,12 @@
     "@react-icons/all-files": "^4.1.0",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "antd": "^5.8.2",
+    "bootstrap": "^5.3.1",
+    "cdbreact": "^1.5.18",
     "heroicons-react": "^1.4.1",
     "next": "13.4.12",
     "react": "18.2.0",
+    "react-bootstrap": "^2.8.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.10.1"
   },
