@@ -123,14 +123,7 @@ export default function App({ Component, pageProps }) {
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                {/* <button
-                  type="button"
-                  className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                >
-                  <span className="absolute -inset-1.5" />
-                  <span className="sr-only">View notifications</span>
-                  <BellIcon className="h-6 w-6" aria-hidden="true" />
-                </button> */}
+         
            <Link className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium' href="/signIn">Sing in</Link>
          <Link className='text-gray-300  hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium' href="/signUp ">Create Account</Link>
 
@@ -303,12 +296,14 @@ export default function App({ Component, pageProps }) {
  marginTop:30,
  paddingBottom:20
 }}>
+  <h2>Our Media:</h2>
     <div style={{
       display: 'flex',
       justifyContent:"space-evenly",
       alignItems:"center",
       width:200
     }} >
+      
  <Link href="https://www.linkedin.com/in/ashraf-ali-21179a269"> <Image src={linkedin} alt='myimg' width={24} height={24} style={{
      filter:" brightness(0) invert(1)"
   }}></Image></Link>
