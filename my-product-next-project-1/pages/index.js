@@ -118,6 +118,52 @@ export default function Home() {
      {products.map(product => <Cards key={product.id} img = {product.images[0]} title = {product.title} stock = {product.stock} price={product.price} myKey={product.id}/> )}
    </div>
    </div>
+   {/* Logo Section */}
+
+   <div className="bg-white py-24 sm:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <h2 className="text-center text-lg font-semibold leading-8 text-gray-900">
+          Trusted by the world’s most innovative teams
+        </h2>
+        <div className="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
+          <img
+            className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
+            src="https://logos-world.net/wp-content/uploads/2022/01/iPhone-Symbol.png"
+            alt="Transistor"
+            width={158}
+            height={48}
+          />
+          <img
+            className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
+            src="https://i.pinimg.com/originals/d5/09/9f/d5099fbca1f14ba14c1891af52837730.png"
+            alt="Reform"
+            width={158}
+            height={48}
+          />
+          <img
+            className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZQc-EvgAXqq2f19V3UK1h_CafhMaAHfY7k_T-Hr95WBKds5HwxVk7-pzJjfxyAO_U-fc&usqp=CAU"
+            alt="Tuple"
+            width={158}
+            height={48}
+          />
+          <img
+            className="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1"
+            src="https://files-cdn.foggfiller.com/_1200x630_crop_center-center_82_none/Fogg-OG.jpg?mtime=1643674747"
+            alt="SavvyCal"
+            width={158}
+            height={48}
+          />
+          <img
+            className="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
+            src="https://static.vecteezy.com/system/resources/previews/014/018/566/original/samsung-logo-on-transparent-background-free-vector.jpg"
+            alt="Statamic"
+            width={158}
+            height={48}
+          />
+        </div>
+      </div>
+    </div>
    {/* Testimonial Section */}
    <section className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20" />
@@ -148,6 +194,7 @@ export default function Home() {
         </figure>
       </div>
     </section>
+
     </div>
   )
 }
