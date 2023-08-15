@@ -252,8 +252,6 @@ export default function App({ Component, pageProps }) {
   <div><Link href={"#"} className='footer-links'>Contact</Link></div>
   <div><Link href={"#"} className='footer-links'>information</Link></div>
   <div><Link href={"#"} className='footer-links'>Products</Link></div>
-  <div><Link href={"#"} className='footer-links'>Products</Link></div>
-  <div><Link href={"#"} className='footer-links'>Products</Link></div>
     
    </div>
    <div style={{
@@ -265,8 +263,6 @@ export default function App({ Component, pageProps }) {
 <h1 className='heading'>Help</h1>
   <div><Link href={"#"} className='footer-links'>About</Link></div>
   <div><Link href={"#"} className='footer-links'>Contact</Link></div>
-  <div><Link href={"#"} className='footer-links'>information</Link></div>
-  <div><Link href={"#"} className='footer-links'>information</Link></div>
   <div><Link href={"#"} className='footer-links'>information</Link></div>
   <div><Link href={"#"} className='footer-links'>Products</Link></div>
    </div>
@@ -280,8 +276,6 @@ export default function App({ Component, pageProps }) {
   <div><Link href={"#"} className='footer-links'>About</Link></div>
   <div><Link href={"#"} className='footer-links'>Contact</Link></div>
   <div><Link href={"#"} className='footer-links'>information</Link></div>
-  <div><Link href={"#"} className='footer-links'>Products</Link></div>
-  <div><Link href={"#"} className='footer-links'>Products</Link></div>
   <div><Link href={"#"} className='footer-links'>Products</Link></div>
   </div>
 
