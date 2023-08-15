@@ -126,41 +126,41 @@ export default function Home() {
           Trusted by the world’s most innovative teams
         </h2>
         <div className="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
-          <img
+         <Link href={"https://www.apple.com/"}> <img
             className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
             src="https://logos-world.net/wp-content/uploads/2022/01/iPhone-Symbol.png"
             alt="Transistor"
             width={158}
             height={48}
-          />
-          <img
+          /></Link>
+        <Link href={"https://www.dell.com/en-pk"}> <img
             className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
             src="https://i.pinimg.com/originals/d5/09/9f/d5099fbca1f14ba14c1891af52837730.png"
             alt="Reform"
             width={158}
             height={48}
-          />
-          <img
+          /></Link> 
+         <Link href={"https://www.hp.com/us-en/home.html"} ><img
             className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZQc-EvgAXqq2f19V3UK1h_CafhMaAHfY7k_T-Hr95WBKds5HwxVk7-pzJjfxyAO_U-fc&usqp=CAU"
             alt="Tuple"
             width={158}
             height={48}
-          />
-          <img
+          /></Link> 
+         <Link href={"https://foog.com/en"}>  <img
             className="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1"
             src="https://files-cdn.foggfiller.com/_1200x630_crop_center-center_82_none/Fogg-OG.jpg?mtime=1643674747"
             alt="SavvyCal"
             width={158}
             height={48}
-          />
-          <img
+          /></Link> 
+       <Link href={"https://www.samsung.com/pk/"}>    <img
             className="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
             src="https://static.vecteezy.com/system/resources/previews/014/018/566/original/samsung-logo-on-transparent-background-free-vector.jpg"
             alt="Statamic"
             width={158}
             height={48}
-          />
+          /></Link> 
         </div>
       </div>
     </div>
