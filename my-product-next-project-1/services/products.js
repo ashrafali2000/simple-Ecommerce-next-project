@@ -2,11 +2,17 @@ import fs from "fs";
 import path from "path";
 
 const filePath = path.join(process.cwd(), "database","products.json" );
+const filePath2 = path.join(process.cwd(), "database","allProduct.json" );
 const filePathForSingleProduct = path.join(process.cwd(), "database", "singleProduct.json");
 const filePathForSignUP = path.join(process.cwd(),"database", "account.json");
 
 export function getAllProducs() {
    const data = fs.readFileSync(filePath);
+   return JSON.parse(data);
+}
+
+export function getAllProducs1() {
+   const data = fs.readFileSync(filePath2);
    return JSON.parse(data);
 }
 
@@ -27,35 +33,51 @@ export function addProduct(title,description,price, discountPercentage, rating,s
     return products;
   }
 
+
+  // Code for more comment an array forms
 // for comment
-//   export function getCommentById(id) {
-//    const {products} = getAllProducs();
-//   const  productDetails = products.find(item => item.id === id);
-//    return productDetails;
-// }
-
-
-// Comment by id
   export function getCommentById(id,comment) {
    let {products} = getAllProducs();
-  const  productDetails = products.find(item => item.id === Number(id));
-    productDetails.comment = comment;
-    console.log(productDetails)
-    products.push(productDetails);
-
- products = products.filter(
- (obj, index) =>
-   products.findIndex((item) => item.id === obj.id) === index
+      let commentArr = products.find(item => item.id === Number(id));
+      commentArr.comment.push(comment);
+      products.push(commentArr);
+    products = products.filter((obj, index) =>
+products.findIndex((item) => item.id === obj.id) === index
  );
-  fs.writeFileSync(filePath, JSON.stringify({products}));
+   fs.writeFileSync(filePath, JSON.stringify({products}));
    return products;
 }
 
 
+// it code for creating just one comment
+//   export function getCommentById(id,comment) {
+//    let {products} = getAllProducs();
+//   const  productDetails = products.find(item => item.id === Number(id));
+//     productDetails.comment = comment;
+//     console.log(productDetails)
+//     products.push(productDetails);
+
+//  products = products.filter(
+//  (obj, index) =>
+//    products.findIndex((item) => item.id === obj.id) === index
+//  );
+//   fs.writeFileSync(filePath, JSON.stringify({products}));
+//    return products;
+// }
+
+
 
 // every product Details
-export function getCommentBySingleId(id) {
+export function getOneProductsById(id) {
   let {products} = getAllProducs();
+ const  productDetails = products.find(item => item.id === Number(id));
+
+ fs.writeFileSync(filePathForSingleProduct, JSON.stringify({productDetails}));
+  return productDetails;
+}
+
+export function getOneProductsById1(id) {
+  let {products} = getAllProducs1();
  const  productDetails = products.find(item => item.id === Number(id));
 
  fs.writeFileSync(filePathForSingleProduct, JSON.stringify({productDetails}));

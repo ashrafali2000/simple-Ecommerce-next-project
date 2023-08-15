@@ -1,30 +1,25 @@
-import { Button, Card } from "antd";
+import { Card } from "antd";
 import Link from "next/link";
 import { BiLike } from "react-icons/bi"
 import { AiOutlineHeart } from "react-icons/ai"
 import { useState } from "react";
 import { FaRegCommentDots } from "react-icons/fa"
 import { useRef } from "react";
-export default function Products({ title, img, myKey, stock, price, myImages }) {
+export default function CardsAllProduct({ title, img, myKey, stock, price }) {
     const commentRef = useRef();
-
     const mySubmit = (event) => {
         const comment = commentRef.current.value;
         event.preventDefault();
-        console.log(comment)
-        const newProduct = JSON.stringify({ myKey, comment });
+        const newComment = JSON.stringify({ myKey, comment });
         fetch(`/api/products/`, {
             method: "POST",
-            body: newProduct,
+            body: newComment,
             headers: {
                 "Content-Type": "application/json",
             },
         })
             .then((res) => res.json())
             .then((json) => console.log(json));
-
-
-        console.log(newProduct)
     }
 
     const [hideLightbox, setHideLightbox] = useState(true);
@@ -113,7 +108,7 @@ export default function Products({ title, img, myKey, stock, price, myImages }) 
                 <div style={{
                     textAlign: "start",
                     marginTop: 15
-                }}><Link href={`ProductsDetail/${myKey}`}><button className="seeDetailsBtn">See Details</button></Link></div>
+                }}><Link href={`allProductDetails/${myKey}`}><button className="seeDetailsBtn">See Details</button></Link></div>
             </Card>
         </div>
     )

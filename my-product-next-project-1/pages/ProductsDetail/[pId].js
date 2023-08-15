@@ -307,13 +307,16 @@ export default function ProductDetails(props) {
             </div>
             <div className="mt-10">
               <h2 className="text-lg font-medium text-gray-900">Comments:</h2>
-              <ol role="list" className="list-disc space-y-2 pl-2 text-sm">
-                <li style={{
+              <ol role="list" className="list-disc space-y-2 pl-2 text-sm ">
+              {myData.comment.map(cmt =>  <li key={new Date().getTime()} style={{
                   backgroundColor: "#fff",
                   width: 300,
                   padding:" 5px 10px",
-                  boxShadow: "2px 3px 9px #888"
-                }} className="text-sm text-gray-600">{myData.comment}</li>
+                  boxShadow: "2px 3px 9px #888",
+                  display: 'flex',
+                  justifyContent: "space-between",
+                  alignItems:'center'
+                }} className="text-sm text-gray-600">{cmt}  <span>                {`${new Date().getHours()} : ${new Date().getMinutes()} : ${new Date().getSeconds()}`}</span>   </li>)}
                 </ol>
             </div>
           </div>
@@ -347,10 +350,10 @@ export async function getStaticProps(context) {
   const res = await fetch(`http://localhost:3000/api/products/${params.pId}`);
   const data = await res.json();
   // console.log(data)
-  const app = data;
+  const allData = data;
   return {
       props: {
-          myData: app
+          myData: allData
       },
       revalidate: 10
   }

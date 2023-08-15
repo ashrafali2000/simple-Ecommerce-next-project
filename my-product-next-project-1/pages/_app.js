@@ -11,7 +11,7 @@ import github from "../public/github.png"
 const navigation = [
   { name: 'Home', href: '/', current: false },
   { name: 'About', href: '/about', current: false },
-  { name: 'Products', href: '#', current: false },
+  { name: 'Products', href: '/products', current: false },
   { name: 'Contact', href: '/contact', current: false },
   { name: 'Add Product', href: '/newProducts', current: false },
 ]

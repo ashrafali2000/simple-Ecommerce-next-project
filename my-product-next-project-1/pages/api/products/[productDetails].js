@@ -1,4 +1,4 @@
-import { getCommentBySingleId,getCommentById } from "@/services/products";
+import { getOneProductsById,getCommentById } from "@/services/products";
 // export default function handler(req, res) {
 //     if(req.method === "GET") {
 //         const {productDetails} = req.query;
@@ -13,7 +13,7 @@ import { getCommentBySingleId,getCommentById } from "@/services/products";
 export default function handler(req, res) {
     if(req.method === "GET") {
         const {productDetails} = req.query;
-        const product = getCommentBySingleId(Number(productDetails));
+        const product = getOneProductsById(Number(productDetails));
         
     return res.status(200).json(product);
     }

@@ -4,11 +4,7 @@ import { Link } from "heroicons-react"
 export default function Profile() {
     return (
         <div>
-            {/* <div>
-                <Link></Link>
-                <Link></Link>
-                <Link></Link>
-            </div> */}
+          
         <div style={{
             display:"flex",
             justifyContent: "center",
@@ -19,6 +15,9 @@ export default function Profile() {
                 width: 100,
                 height: 100
             }} />
+            <div>
+                Name: {}
+            </div>
     
         </div>
 
