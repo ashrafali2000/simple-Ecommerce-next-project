@@ -48,6 +48,19 @@ products.findIndex((item) => item.id === obj.id) === index
    return products;
 }
 
+// for all Products page
+  export function getCommentById1(id,comment) {
+   let {products} = getAllProducs1();
+      let commentArr = products.find(item => item.id === Number(id));
+      commentArr.comment.push(comment);
+      products.push(commentArr);
+    products = products.filter((obj, index) =>
+products.findIndex((item) => item.id === obj.id) === index
+ );
+   fs.writeFileSync(filePath2, JSON.stringify({products}));
+   return products;
+}
+
 
 // it code for creating just one comment
 //   export function getCommentById(id,comment) {
