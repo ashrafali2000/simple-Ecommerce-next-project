@@ -1,6 +1,6 @@
 import { useRef, useState } from "react"
 
-export default function SingnIn() {
+export default function SingnIn({checkSingIn}) {
 
   const [check, setCheck] = useState(false);
   const emailRef = useRef();
@@ -25,6 +25,7 @@ export default function SingnIn() {
   }
   if(val){
     setCheck(true);
+    checkSingIn()
     }
   else{
     setCheck(false);
