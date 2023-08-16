@@ -99,7 +99,7 @@ export default function CardsAllProduct({ title, img, myKey, stock, price }) {
 
                         }}
                         >
-                            <form className={`lightbox ${hideLightbox ? "hide-lightbox" : ""}`} onSubmit={mySubmit} ><input autoFocus ref={commentRef}></input> <button className="savebtn">Send</button> </form>
+                            <form className={` lightbox ${hideLightbox ? "hide-lightbox" : ""}`} onSubmit={mySubmit} ><input autoFocus ref={commentRef} ></input> <button className="savebtn" onClick={() => setHideLightbox(true)}>Send</button> </form>
                             <FaRegCommentDots onClick={() => setHideLightbox(false)}></FaRegCommentDots>
                         </div>
                     </div>

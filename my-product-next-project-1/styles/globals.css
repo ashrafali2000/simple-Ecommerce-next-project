@@ -10,13 +10,14 @@
     align-items: center;
     padding-top: 60px;
     padding-bottom: 70px;
-    background-color: antiquewhite;
+    background-color: antiquewhite
 
 }
 .allProducts-Container{
     text-align: center;
     background-color: antiquewhite;
     padding-top: 40px ;
+    padding-bottom: 40px;
 
 }
 
@@ -24,7 +25,7 @@
     background-color: antiquewhite;
 }
 .seeDetailsBtn{
-    background-color: rgb(92, 92, 234);
+    background-color: rgb(47, 47, 47);
     color: #fff;
     padding: 8px 17px ;
      border-radius: 10px;
@@ -67,8 +68,10 @@
   }
   
   .hide-lightbox {
-    z-index: -1;
-   
+    display: none;
+  }
+  .btn-form-hide{
+    display: none;
   }
   .savebtn{
     background-color: rgb(101, 101, 242);

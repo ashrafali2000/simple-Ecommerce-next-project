@@ -9,7 +9,7 @@ export default function Home() {
       .then((res) => res.json())
       .then((p) => setProducts(p.products));
   }, []);
-
+  // myFunc1();
   return (
     <div>
  {/* Header section */}
@@ -94,7 +94,7 @@ export default function Home() {
               </div>
 
               <a
-                href="#"
+                href="/about"
                 className="inline-block rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700"
               >
                 Shop Collection
@@ -109,10 +109,11 @@ export default function Home() {
 
 {/* All card rendering */}
 <div className="allProducts-Container ">
-  <div><Link href={"#"}  className="inline-block  rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700">New Products</Link></div>
+  <div className="inline-block  rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700">Our Products</div>
    <div className="allProducts">
      {products.map(product => <Cards key={product.id} img = {product.images[0]} title = {product.title} stock = {product.stock} price={product.price} myKey={product.id}/> )}
    </div>
+  <div><Link href={"/products"}  className="inline-block  rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700 ">See more products</Link></div>
    </div>
 
    {/* Logo Section */}
