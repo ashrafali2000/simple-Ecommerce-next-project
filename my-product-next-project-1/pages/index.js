@@ -114,9 +114,9 @@ export default function Home() {
      {products.map(product => <Cards key={product.id} img = {product.images[0]} title = {product.title} stock = {product.stock} price={product.price} myKey={product.id}/> )}
    </div>
    </div>
-   {/* Logo Section */}
 
-   <div className="bg-white py-24 sm:py-32">
+   {/* Logo Section */}
+   <div className="bg-white py-24 sm:py-32 logos-Section">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <h2 className="text-center text-lg font-semibold leading-8 text-gray-900">
           Trusted by the world’s most innovative teams
@@ -160,6 +160,7 @@ export default function Home() {
         </div>
       </div>
     </div>
+
    {/* Testimonial Section */}
    <section className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20" />

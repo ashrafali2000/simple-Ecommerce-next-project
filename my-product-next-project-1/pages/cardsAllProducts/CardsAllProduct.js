@@ -11,7 +11,7 @@ export default function CardsAllProduct({ title, img, myKey, stock, price }) {
         const comment = commentRef.current.value;
         event.preventDefault();
         const newComment = JSON.stringify({ myKey, comment });
-        fetch(`/api/products/`, {
+        fetch(`/api/AllProducts/`, {
             method: "POST",
             body: newComment,
             headers: {
