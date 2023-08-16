@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react"
 import Link from "next/link";
 import Cards from "./cards/Cards";
-
 export default function Home() {
   const [products, setProducts] = useState([]);
 
@@ -9,7 +8,6 @@ export default function Home() {
     fetch("/api/products/")
       .then((res) => res.json())
       .then((p) => setProducts(p.products));
-      // console.log(p.products);
   }, []);
 
   return (
@@ -107,8 +105,6 @@ export default function Home() {
         </div>
       </div>
     </div>
-
-
 
 
 {/* All card rendering */}
