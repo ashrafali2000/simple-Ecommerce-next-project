@@ -8,6 +8,7 @@ import Link from 'next/link';
 import linkedin from "../public/linkedin.png"
 import twitter from "../public/twitter.png"
 import github from "../public/github.png"
+import { useState } from 'react';
 const navigation = [
   { name: 'Home', href: '/', current: false },
   { name: 'About', href: '/about', current: false },
@@ -21,6 +22,10 @@ function classNames(...classes) {
 }
 
 export default function App({ Component, pageProps }) {
+  const [signIn , setSignIn] = useState(true);
+  const checkSignIn = () => {
+    setSignIn(false);
+  }
 
  return <div> 
 <div  className="sticky-top">
@@ -124,7 +129,7 @@ export default function App({ Component, pageProps }) {
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
          
-           <Link className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium' href="/signIn">Sing in</Link>
+         {signIn ? <Link className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium' href="/signIn">Sign in</Link> : <Link href={"#"} className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'>Sign out</Link>}
          <Link className='text-gray-300  hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium' href="/signUp ">Create Account</Link>
 
                 {/* Profile dropdown */}
@@ -212,7 +217,7 @@ export default function App({ Component, pageProps }) {
 
 
 {/* pages */}
-   <Component {...pageProps} />
+   <Component {...pageProps} checkSingIn = {checkSignIn} />
 
    {/* footer */}
   <div style={{
@@ -248,10 +253,10 @@ export default function App({ Component, pageProps }) {
     alignItems:"center"
   }}>
     <h2 className='heading'>Company</h2>
-  <div><Link href={"#"} className='footer-links'>About</Link></div>
-  <div><Link href={"#"} className='footer-links'>Contact</Link></div>
-  <div><Link href={"#"} className='footer-links'>information</Link></div>
-  <div><Link href={"#"} className='footer-links'>Products</Link></div>
+  <div><Link href={"/about"} className='footer-links'>About</Link></div>
+  <div><Link href={"/contact"} className='footer-links'>Contact</Link></div>
+  <div><Link href={"/information"} className='footer-links'>information</Link></div>
+  <div><Link href={"/products"} className='footer-links'>Products</Link></div>
     
    </div>
    <div style={{
@@ -261,10 +266,10 @@ export default function App({ Component, pageProps }) {
     alignItems:"center"
   }}>
 <h1 className='heading'>Help</h1>
-  <div><Link href={"#"} className='footer-links'>About</Link></div>
-  <div><Link href={"#"} className='footer-links'>Contact</Link></div>
-  <div><Link href={"#"} className='footer-links'>information</Link></div>
-  <div><Link href={"#"} className='footer-links'>Products</Link></div>
+  <div><Link href={"/about"} className='footer-links'>About</Link></div>
+  <div><Link href={"/contact"} className='footer-links'>Contact</Link></div>
+  <div><Link href={"/information"} className='footer-links'>information</Link></div>
+  <div><Link href={"/products"} className='footer-links'>Products</Link></div>
    </div>
    <div style={{
     display: 'flex',
@@ -273,10 +278,10 @@ export default function App({ Component, pageProps }) {
     alignItems:"center"
   }} >
    <h1 className='heading'>Products</h1>
-  <div><Link href={"#"} className='footer-links'>About</Link></div>
-  <div><Link href={"#"} className='footer-links'>Contact</Link></div>
-  <div><Link href={"#"} className='footer-links'>information</Link></div>
-  <div><Link href={"#"} className='footer-links'>Products</Link></div>
+  <div><Link href={"/about"} className='footer-links'>About</Link></div>
+  <div><Link href={"/contact"} className='footer-links'>Contact</Link></div>
+  <div><Link href={"/information"} className='footer-links'>information</Link></div>
+  <div><Link href={"/products"} className='footer-links'>Products</Link></div>
   </div>
 
    </div>
