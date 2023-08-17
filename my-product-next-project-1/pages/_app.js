@@ -204,7 +204,7 @@ export default function App({ Component, pageProps }) {
                     'block rounded-md px-3 py-2 text-base font-medium'
                   )}
                   aria-current={item.current ? 'page' : undefined}
-               disabled = {false}>
+               >
                   {item.name}
                 </Disclosure.Button>
               ))}
