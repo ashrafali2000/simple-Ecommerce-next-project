@@ -12,7 +12,7 @@ export default function SingnIn({checkSingIn}) {
     const password = passwordRef.current.value;
     console.log(email,password)
 
-    fetch('http://localhost:3000/api/signin')
+    fetch('/api/signin')
     .then(res => res.json())
     .then(json => {
    const users =   json.userId;

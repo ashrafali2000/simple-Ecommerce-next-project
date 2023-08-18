@@ -29,7 +29,7 @@ fetch("/api/signup/", {
 
 // Get Data
 
-fetch('http://localhost:3000/api/signup')
+fetch('/api/signup')
 .then(res => res.json())
 .then(json => {
 const users =   json.userId;
