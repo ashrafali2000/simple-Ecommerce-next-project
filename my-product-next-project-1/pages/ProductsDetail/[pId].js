@@ -50,12 +50,7 @@ export default function ProductDetails(props) {
     const { myData } = props
     const [selectedColor, setSelectedColor] = useState(product.colors[0])
     const [selectedSize, setSelectedSize] = useState(product.sizes[2])
-    useEffect(() => {
-        console.log("my  name is ashraf ali")
-        console.log(myData)
-    })
-    
-    
+        
     return (
         <div className="myCard" style={{
             color: "#888"
@@ -331,12 +326,12 @@ export default function ProductDetails(props) {
 
 
 export async function getStaticPaths() {
-  const res = await fetch("http://localhost:3000/api/products/");
+  const res = await fetch("http://localhost:3002/api/products/");
   const data = await res.json();
   const myProduct = data.products.map(p => {
       return { params: { pId: p.id.toString() } }
   })
-  // console.log(myProduct)
+
   return {
       paths: myProduct,
       fallback: "blocking"
@@ -347,13 +342,12 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   const { params } = context;
   // console.log(params);
-  const res = await fetch(`http://localhost:3000/api/products/${params.pId}`);
+  const res = await fetch(`http://localhost:3002/api/products/${params.pId}`);
   const data = await res.json();
-  // console.log(data)
-  const allData = data;
+
   return {
       props: {
-          myData: allData
+          myData: data
       },
       revalidate: 10
   }
