@@ -12,9 +12,8 @@ import { useState } from 'react';
 const navigation = [
   { name: 'Home', href: '/', current: false },
   { name: 'About', href: '/about', current: false },
-  { name: 'Products', href: '/products', current: false },
   { name: 'Contact', href: '/contact', current: false },
-  { name: 'Add Product', href: '/newProducts', current: false },
+
 ]
 
 function classNames(...classes) {
@@ -23,6 +22,14 @@ function classNames(...classes) {
 
 export default function App({ Component, pageProps }) {
   const [signIn , setSignIn] = useState(true);
+  const [hideProducts, setHideProducts] = useState(false);
+  
+  if(hideProducts){
+    navigation.push( { name: 'Products', href: '/products', current: false },
+    { name: 'Add Product', href: '/newProducts', current: false })
+  }
+
+
   const checkSignIn = () => {
     setSignIn(false);
   }
@@ -217,7 +224,7 @@ export default function App({ Component, pageProps }) {
 
 
 {/* pages */}
-   <Component {...pageProps} checkSingIn = {checkSignIn} />
+   <Component {...pageProps} checkSingIn = {checkSignIn}  hideProducts ={hideProducts} setHideProducts={setHideProducts}/>
 
    {/* footer */}
   <div style={{
