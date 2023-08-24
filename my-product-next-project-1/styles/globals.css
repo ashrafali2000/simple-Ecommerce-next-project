@@ -89,3 +89,7 @@
   .footer-links:hover{
     color: #fff;
   }
+
+  @media screen and (max-width: 576px) {
+    
+  }
