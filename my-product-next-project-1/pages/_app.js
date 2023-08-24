@@ -9,7 +9,7 @@ import linkedin from "../public/linkedin.png"
 import twitter from "../public/twitter.png"
 import github from "../public/github.png"
 import { useState } from 'react';
-import { Avatar } from "@mui/material"
+import { Avatar, useStepContext } from "@mui/material"
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -20,6 +20,7 @@ export default function App({ Component, pageProps }) {
   const [hideProducts, setHideProducts] = useState(false);
   const [userName , setUserName] = useState("");
   const [userImg, setUserImg] = useState("");
+  const [logo, setLogo] = useState(true);
   
   const navigation = [
     { name: 'Home', href: '/', current: false },
@@ -107,7 +108,7 @@ export default function App({ Component, pageProps }) {
                 </Disclosure.Button>
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                <div className="flex flex-shrink-0 items-center">
+                <div className={`flex flex-shrink-0 items-center ${logo ?"logohome":"" }`}>
                   <Image
                     className="h-10 w-auto"
                     src={mylogo}
@@ -223,7 +224,7 @@ export default function App({ Component, pageProps }) {
 
 
 {/* pages */}
-   <Component {...pageProps} hideProducts ={hideProducts} setHideProducts={setHideProducts} setUserName = {setUserName} userName = {userName} userImg ={userImg} setUserImg = {setUserImg} setIsLogin = {setIsLogin}/>
+   <Component {...pageProps} hideProducts ={hideProducts} setHideProducts={setHideProducts} setUserName = {setUserName} userName = {userName} userImg ={userImg} setUserImg = {setUserImg} setIsLogin = {setIsLogin} setLogo={setLogo}/>
 
    {/* footer */}
   <div style={{

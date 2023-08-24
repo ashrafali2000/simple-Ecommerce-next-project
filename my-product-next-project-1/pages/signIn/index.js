@@ -1,7 +1,7 @@
 import { useRef, useState } from "react"
 import Link from "next/link";
 
-export default function SingnIn({setHideProducts,setUserName,setUserImg,setIsLogin}) {
+export default function SingnIn({setHideProducts,setUserName,setUserImg,setIsLogin, setLogo}) {
 
   const [check, setCheck] = useState(false);
   const emailRef = useRef();
@@ -34,6 +34,7 @@ export default function SingnIn({setHideProducts,setUserName,setUserImg,setIsLog
     setCheck(true);
     setUserName(name);
     setUserImg(ImgUser)
+    setLogo(false)
     }
   else{
     setCheck(false);
