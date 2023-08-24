@@ -105,7 +105,7 @@ export function getAllAccounts() {
 }
 
 // signUp accont
-export function signUp(name,email,password) {
+export function signUp(name,email,password, imgUrl) {
  const {userId} = getAllAccounts();
   let val = false;
   for(let a = 0; a < userId.length; a++) {
@@ -120,7 +120,7 @@ if(val){
       return userId;
   }
 else{
-  userId.push({name,email,password});
+  userId.push({name,email,password,imgUrl});
     fs.writeFileSync(filePathForSignUP, JSON.stringify({ userId }));
     return userId;
   }

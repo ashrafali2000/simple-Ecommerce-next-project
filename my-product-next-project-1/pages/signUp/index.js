@@ -1,9 +1,11 @@
 import { useRef,useState } from "react"
+import Link from "next/link";
 
 export default function SignUp() {
   const nameRef =  useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
+  const urlRef = useRef();
   const [check, setCheck] = useState(true);
   const [check1, setCheck1] = useState(false);
 
@@ -12,9 +14,10 @@ export default function SignUp() {
 const name = nameRef.current.value;
 const email = emailRef.current.value;
 const password = passwordRef.current.value;
+const imgUrl = urlRef.current.value;
 console.log(name,email,password)
 
-const newProduct = JSON.stringify({name,email, password });
+const newProduct = JSON.stringify({name,email, password, imgUrl });
 
 // POST method
 fetch("/api/signup/", {
@@ -106,11 +109,7 @@ setCheck(false);
                   <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
                     Password
                   </label>
-                  <div className="text-sm">
-                    <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
-                      Forgot password?
-                    </a>
-                  </div>
+  
                 </div>
                 <div className="mt-2">
                   <input
@@ -124,6 +123,24 @@ setCheck(false);
                   />
                 </div>
               </div>
+
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+                  Image Url
+                </label>
+                <div className="mt-2">
+                  <input
+                    id="url"
+                    name="url"
+                    ref={urlRef}
+                    type="url"
+                    autoComplete="url"
+                    required
+                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  />
+                </div>
+              </div>
+
   
               <div>
               {check  ?  <p>Complete the above blanks</p> : check1 ? <p style={{color: "#f00"}}>This Account already exist</p> : <p style={{color: "#10781a", fontWeight: 500}}>Account created successfully</p>}
@@ -138,9 +155,9 @@ setCheck(false);
   
             <p className="mt-10 text-center text-sm text-gray-500">
               Not a member?{' '}
-              <a href="#" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
-                Start a 14 day free trial
-              </a>
+              <Link href="/signIn" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
+                Sign in
+              </Link>
             </p>
           </div>
         </div>

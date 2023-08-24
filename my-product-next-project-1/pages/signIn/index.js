@@ -1,6 +1,7 @@
 import { useRef, useState } from "react"
+import Link from "next/link";
 
-export default function SingnIn({checkSingIn,setHideProducts}) {
+export default function SingnIn({setHideProducts,setUserName,setUserImg,setIsLogin}) {
 
   const [check, setCheck] = useState(false);
   const emailRef = useRef();
@@ -11,22 +12,28 @@ export default function SingnIn({checkSingIn,setHideProducts}) {
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
     console.log(email,password)
-
+    
     fetch('/api/signin')
     .then(res => res.json())
     .then(json => {
    const users =   json.userId;
     let val = false;
+    let name;
+    let ImgUser;
     for(let a = 0; a < users.length; a++) {
       if( users[a].email === email && users[a].password === password){
       val = true;
+       name = users[a].name;
+       ImgUser = users[a].imgUrl;
       break;
     }
   }
   if(val){
-    setCheck(true);
-    checkSingIn()
     setHideProducts(true)
+    setIsLogin(false)
+    setCheck(true);
+    setUserName(name);
+    setUserImg(ImgUser)
     }
   else{
     setCheck(false);
@@ -75,11 +82,7 @@ export default function SingnIn({checkSingIn,setHideProducts}) {
                 <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
                   Password
                 </label>
-                <div className="text-sm">
-                  <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
-                    Forgot password?
-                  </a>
-                </div>
+      
               </div>
               <div className="mt-2">
                 <input
@@ -107,9 +110,9 @@ export default function SingnIn({checkSingIn,setHideProducts}) {
 
           <p className="mt-10 text-center text-sm text-gray-500">
             Not a member?{' '}
-            <a href="#" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
-              Start a 14 day free trial
-            </a>
+            <Link href="signUp" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
+              Sign up
+            </Link>
           </p>
         </div>
       </div>
