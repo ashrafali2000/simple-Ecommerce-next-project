@@ -10,7 +10,7 @@ export default function Home() {
       .then((res) => res.json())
       .then((p) => setProducts(p.products));
   }, []);
-  // myFunc1();
+
   return (
     <div>
  {/* Header section */}
