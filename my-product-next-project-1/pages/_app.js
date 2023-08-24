@@ -1,5 +1,5 @@
 import '@/styles/globals.css'
-import { Fragment } from 'react'
+import { Fragment, useEffect } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import mylogo from "../public/LogoProducts.png";
@@ -9,30 +9,28 @@ import linkedin from "../public/linkedin.png"
 import twitter from "../public/twitter.png"
 import github from "../public/github.png"
 import { useState } from 'react';
-const navigation = [
-  { name: 'Home', href: '/', current: false },
-  { name: 'About', href: '/about', current: false },
-  { name: 'Contact', href: '/contact', current: false },
-
-]
+import { Avatar } from "@mui/material"
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
 export default function App({ Component, pageProps }) {
-  const [signIn , setSignIn] = useState(true);
+  const [isLogin, setIsLogin] = useState(true)
   const [hideProducts, setHideProducts] = useState(false);
+  const [userName , setUserName] = useState("");
+  const [userImg, setUserImg] = useState("");
   
-  if(hideProducts){
-    navigation.push( { name: 'Products', href: '/products', current: false },
+  const navigation = [
+    { name: 'Home', href: '/', current: false },
+    { name: 'About', href: '/about', current: false },
+    { name: 'Contact', href: '/contact', current: false },
+  ]
+   if(hideProducts){
+     navigation.push( { name: 'Products', href: '/products', current: false },
     { name: 'Add Product', href: '/newProducts', current: false })
   }
 
-
-  const checkSignIn = () => {
-    setSignIn(false);
-  }
 
  return <div> 
 <div  className="sticky-top">
@@ -119,37 +117,38 @@ export default function App({ Component, pageProps }) {
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
-                      <a
+                      <Link
                         key={item.name}
                         href={item.href}
                         className={classNames(
                           item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                          'rounded-md px-3 py-2 text-sm font-medium'
+                          'rounded-md px-3 py-2 text-m font-medium'
                         )}
                         aria-current={item.current ? 'page' : undefined}
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
          
-         {signIn ? <Link className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium' href="/signIn">Sign in</Link> : <Link href={"#"} className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'>Sign out</Link>}
-         <Link className='text-gray-300  hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium' href="/signUp ">Create Account</Link>
+      {isLogin ? <div>
+      <Link className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium' href="/signIn">Sign in</Link> 
+         <Link className='text-gray-300  hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-m font-medium' href="/signUp ">Create Account</Link>
+        </div> : ""}
 
                 {/* Profile dropdown */}
-                <Menu as="div" className="relative ml-3">
+               { hideProducts && <Menu as="div" className="relative ml-3">
                   <div>
                     <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                       <span className="absolute -inset-1.5" />
                       <span className="sr-only">Open user menu</span>
-                      <img
-                        className="h-8 w-8 rounded-full"
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIo_dFaAb7Hg0zAjUCzoiphbZjDiZzXm8RzA&usqp=CAU"
-                        alt=""
-                      />
+                      <Avatar src={userImg} style={{
+                width: 40,
+                height: 40
+            }} />
                     </Menu.Button>
                   </div>
                   <Transition
@@ -185,7 +184,7 @@ export default function App({ Component, pageProps }) {
                       <Menu.Item>
                         {({ active }) => (
                           <a
-                            href="#"
+                            href="/"
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
                             Sign out
@@ -194,7 +193,7 @@ export default function App({ Component, pageProps }) {
                       </Menu.Item>
                     </Menu.Items>
                   </Transition>
-                </Menu>
+                </Menu>}
               </div>
             </div>
           </div>
@@ -224,7 +223,7 @@ export default function App({ Component, pageProps }) {
 
 
 {/* pages */}
-   <Component {...pageProps} checkSingIn = {checkSignIn}  hideProducts ={hideProducts} setHideProducts={setHideProducts}/>
+   <Component {...pageProps} hideProducts ={hideProducts} setHideProducts={setHideProducts} setUserName = {setUserName} userName = {userName} userImg ={userImg} setUserImg = {setUserImg} setIsLogin = {setIsLogin}/>
 
    {/* footer */}
   <div style={{
