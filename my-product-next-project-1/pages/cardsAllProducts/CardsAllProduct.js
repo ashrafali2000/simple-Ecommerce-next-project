@@ -35,7 +35,6 @@ export default function CardsAllProduct({ title, img, myKey, stock, price }) {
         setLove(prev => +prev + 1);
     }
 
-
     return (
         <div className="Products">
             <Card

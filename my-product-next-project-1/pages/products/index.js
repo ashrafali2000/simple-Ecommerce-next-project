@@ -2,15 +2,7 @@ import CardsAllProduct from "../cardsAllProducts/CardsAllProduct"
 import Link from "next/link"
 import { useState, useEffect } from "react";
 import React from 'react';
-import { Carousel } from 'antd';
-import Image from "next/image";
-const contentStyle = {
-  height: '160px',
-  color: '#fff',
-  lineHeight: '160px',
-  textAlign: 'center',
-  background: '#364d79',
-};
+
 export default function Prodcuts() {
     const [products, setProducts] = useState([]);
 
@@ -20,12 +12,8 @@ export default function Prodcuts() {
         .then((p) => setProducts(p.products));
     }, []);
 
-
     return(
         <div>
-
-
-
 
             {/* All card rendering */}
 <div className="allProducts-Container ">
