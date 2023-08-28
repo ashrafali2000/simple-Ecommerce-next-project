@@ -26,7 +26,7 @@ export function addProduct(title,description,price, discountPercentage, rating,s
     const { products } = getAllProducs();
     products.push({
       id: products.length + 1,
-      title,price,description,discountPercentage,rating,stock,brand,category,images
+      title,price,description,discountPercentage,rating,stock,brand,category,images,comment:[]
     });
     fs.writeFileSync(filePath, JSON.stringify({ products }));
   

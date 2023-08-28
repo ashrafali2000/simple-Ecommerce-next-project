@@ -35,7 +35,7 @@ function NewProduct() {
       return;
     }
     const newProduct = JSON.stringify({title,description,price, discountPercentage, rating,stock,brand,category,images });
-    fetch("/api/products/", {
+    fetch("/api/addProducts/", {
       method: "POST",
       body: newProduct,
       headers: {
