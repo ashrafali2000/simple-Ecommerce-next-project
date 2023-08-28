@@ -1,4 +1,4 @@
-import { getAllProducs, addProduct,getCommentById, getAllAccounts } from "@/services/products"
+import { getAllProducs,getCommentById } from "@/services/products"
 
 export default function handler(req, res) {
     // render all products as a cards
@@ -6,7 +6,7 @@ export default function handler(req, res) {
         const product = getAllProducs();
         res.status(200).json(product);
     }
-    
+
  // creating comment
     if (req.method === "POST") {
         const {myKey,comment } = req.body;

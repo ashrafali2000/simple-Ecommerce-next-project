@@ -19,7 +19,7 @@ export default function Prodcuts() {
 <div className="allProducts-Container ">
   <div><Link href={"#"}  className="inline-block  rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700">New Products</Link></div>
    <div className="allProducts">
-     {products.map(product => <CardsAllProduct key={product.id} img = {product.images[0]} title = {product.title} stock = {product.stock} price={product.price} myKey={product.id}/> )}
+     {products.map(product => <CardsAllProduct key={product.id} img = {product.images[0]} title = {product.title} stock = {product.stock} price={product.price} myKey={product.id} myLike = {product.like}/> )}
    </div>
    </div>
         </div>

@@ -112,7 +112,7 @@ export default function Home() {
 <div className="allProducts-Container ">
   <div className="inline-block  rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700">Our Products</div>
    <div className="allProducts">
-     {products.map(product => <Cards key={product.id} img = {product.images[0]} title = {product.title} stock = {product.stock} price={product.price} myKey={product.id}/> )}
+     {products.map(product => <Cards key={product.id} img = {product.images[0]} title = {product.title} stock = {product.stock} price={product.price} myKey={product.id} myLike = {product.like}/> )}
    </div>
   <div><Link href={"/products"}  className="inline-block  rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700 ">See more products <HiArrowNarrowRight style={{display:"inline-block"}}></HiArrowNarrowRight></Link></div>
    </div>

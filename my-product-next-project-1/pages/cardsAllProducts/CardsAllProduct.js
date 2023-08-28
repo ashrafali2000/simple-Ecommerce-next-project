@@ -5,7 +5,7 @@ import { AiOutlineHeart } from "react-icons/ai"
 import { useState } from "react";
 import { FaRegCommentDots } from "react-icons/fa"
 import { useRef } from "react";
-export default function CardsAllProduct({ title, img, myKey, stock, price }) {
+export default function CardsAllProduct({ title, img, myKey, stock, price, myLike }) {
     const commentRef = useRef();
     const mySubmit = (event) => {
         const comment = commentRef.current.value;
@@ -26,6 +26,7 @@ export default function CardsAllProduct({ title, img, myKey, stock, price }) {
 
     const [like, setLike] = useState(stock);
     const [love, setLove] = useState(price);
+  
 
     const likeHandler = () => {
         setLike(prev => +prev + 1);
@@ -34,6 +35,8 @@ export default function CardsAllProduct({ title, img, myKey, stock, price }) {
     const loveHandler = () => {
         setLove(prev => +prev + 1);
     }
+
+
 
     return (
         <div className="Products">
@@ -109,7 +112,7 @@ export default function CardsAllProduct({ title, img, myKey, stock, price }) {
                     justifyContent: "space-around",
                     alignItems:"center",
                     marginTop: 15
-                }}><Link href={`allProductDetails/${myKey}`}><button className="seeDetailsBtn">See Details</button></Link> <span style={{fontSize:20,color:"#00f"}}>{"$"+price}</span></div>
+                }}><Link href={`allProductDetails/${myKey}`}><button className="seeDetailsBtn">See Details</button></Link> <span style={{fontSize:20,color:"#00f"}}>{"$"+price}{lk}</span></div>
             </Card>
         </div>
     )
