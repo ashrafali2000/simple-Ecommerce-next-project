@@ -21,6 +21,7 @@ export default function App({ Component, pageProps }) {
   const [userName , setUserName] = useState("");
   const [userImg, setUserImg] = useState("");
   const [logo, setLogo] = useState(true);
+  const [userEmail, setUserEmail] = useState();
   
   const navigation = [
     { name: 'Home', href: '/', current: false },
@@ -224,7 +225,7 @@ export default function App({ Component, pageProps }) {
 
 
 {/* pages */}
-   <Component {...pageProps} hideProducts ={hideProducts} setHideProducts={setHideProducts} setUserName = {setUserName} userName = {userName} userImg ={userImg} setUserImg = {setUserImg} setIsLogin = {setIsLogin} setLogo={setLogo}/>
+   <Component {...pageProps} hideProducts ={hideProducts} setHideProducts={setHideProducts} setUserName = {setUserName} userName = {userName} userImg ={userImg} setUserImg = {setUserImg} setIsLogin = {setIsLogin} setLogo={setLogo} userEmail = {userEmail}  setUserEmail = {setUserEmail}/>
 
    {/* footer */}
   <div style={{

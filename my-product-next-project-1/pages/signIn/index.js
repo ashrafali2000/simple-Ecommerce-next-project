@@ -3,7 +3,7 @@ import Link from "next/link";
 import myLogo from "../../public/LogoProducts.png"
 import Image from "next/image";
 
-export default function SingnIn({setHideProducts,setUserName,setUserImg,setIsLogin, setLogo}) {
+export default function SingnIn({setHideProducts,setUserName,setUserEmail,setUserImg,setIsLogin, setLogo}) {
 
   const [check, setCheck] = useState(false);
   const emailRef = useRef();
@@ -22,26 +22,28 @@ export default function SingnIn({setHideProducts,setUserName,setUserImg,setIsLog
     let val = false;
     let name;
     let ImgUser;
+    let usrEmail;
     for(let a = 0; a < users.length; a++) {
       if( users[a].email === email && users[a].password === password){
       val = true;
        name = users[a].name;
        ImgUser = users[a].imgUrl;
+       usrEmail = users[a].email;
       break;
     }
   }
   if(val){
-    setHideProducts(true)
-    setIsLogin(false)
+    setHideProducts(true);
+    setIsLogin(false);
     setCheck(true);
     setUserName(name);
     setUserImg(ImgUser)
-    setLogo(false)
+    setUserEmail(usrEmail);
+    setLogo(false);
     }
   else{
     setCheck(false);
     }
-
     })
   }
 

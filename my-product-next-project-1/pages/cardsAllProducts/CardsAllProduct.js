@@ -112,7 +112,7 @@ export default function CardsAllProduct({ title, img, myKey, stock, price, myLik
                     justifyContent: "space-around",
                     alignItems:"center",
                     marginTop: 15
-                }}><Link href={`allProductDetails/${myKey}`}><button className="seeDetailsBtn">See Details</button></Link> <span style={{fontSize:20,color:"#00f"}}>{"$"+price}{lk}</span></div>
+                }}><Link href={`allProductDetails/${myKey}`}><button className="seeDetailsBtn">See Details</button></Link> <span style={{fontSize:20,color:"#00f"}}>{"$"+price}</span></div>
             </Card>
         </div>
     )
