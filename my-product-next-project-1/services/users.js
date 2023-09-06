@@ -14,9 +14,8 @@ export const getByEmail = (email) => {
 
 // Updata password Functions
 export async function verifyUserPassword( oldPassword,myUserPassword,userEmail,newPassword) {
-const isValid = await oldPassword === await myUserPassword
 
-    if(!isValid) {
+    if(oldPassword !== myUserPassword) {
       throw new Error ("Your Old Password is incorrect");
     }
     return updateUserPassword(userEmail,newPassword); 
