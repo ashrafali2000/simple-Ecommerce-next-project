@@ -13,11 +13,13 @@ export const getByEmail = (email) => {
 }
 
 // Updata password Functions
-export async function verifyUserPassword( oldPassword,userPassword) {
+export async function verifyUserPassword( oldPassword,myUserPassword,userEmail,newPassword) {
+const isValid = await oldPassword === await myUserPassword
 
-    if(+oldPassword === +userPassword) {
-        return true;
-   }
+    if(!isValid) {
+      throw new Error ("Your Old Password is incorrect");
+    }
+    return updateUserPassword(userEmail,newPassword); 
 }
 
 export async function updateUserPassword(userEmail, newPassword) {

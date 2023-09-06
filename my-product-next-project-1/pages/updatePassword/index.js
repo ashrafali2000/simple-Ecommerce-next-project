@@ -5,7 +5,8 @@ export default function UpdateUser({userEmail}) {
     const oldPasswordRef = useRef();
     const newPasswordRef = useRef();
 
-    const onUpdateUser = async () => {
+    const onUpdateUser = async (event) => {
+        event.preventDefault();
         const oldPassword = oldPasswordRef.current.value;
         const newPassword = newPasswordRef.current.value;
         const res = await fetch("/api/updatePassword", {
